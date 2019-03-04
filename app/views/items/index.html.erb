@@ -164,162 +164,39 @@
                         <div class="col-md-9">
                             <div class="row">
 
-                                <div class="col-lg-4 col-md-6">
-                                    <div class="card card-product card-plain">
-                                        <div class="card-image">
-                                            <a href="#">
-                                                <img src="#" alt="..." />
-                                            </a>
-                                        </div>
-                                        <div class="card-body">
-                                            <a href="#">
-                                                <h4 class="card-title">Polo Ralph Lauren</h4>
-                                            </a>
-                                            <p class="card-description">
-                                                Impeccably tailored in Italy from lightweight navy wool.
-                                            </p>
-                                            <div class="card-footer">
-                                                <div class="price-container">
-                                                    <span class="price"> &euro; 300</span>
-                                                </div>
-                                                <button class="btn btn-danger btn-neutral btn-icon btn-round pull-right" rel="tooltip" title="Remove from wishlist" data-placement="left">
-                                                    <i class="now-ui-icons ui-2_favourite-28"></i>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- end card -->
+                          <%@items.each do |item|%>
+                          <div class="col-lg-4 col-md-6">
+                            <div class="card card-product card-plain">
+                              <div class="card-image">
+                                <a href="#">
+                                  <img src="https://images.pexels.com/photos/416160/pexels-photo-416160.jpeg?auto=compress&cs=tinysrgb&h=120&w=250" alt="chaton" />
+                                </a>
                                 </div>
-                                <div class="col-lg-4 col-md-6">
-                                    <div class="card card-product card-plain">
-                                        <div class="card-image">
-                                            <a href="#">
-                                                <img src="../assets/img/tom-ford.jpg" alt="..." />
-                                            </a>
-                                        </div>
-                                        <div class="card-body">
-                                            <a href="#">
-                                                <h4 class="card-title">Tom Ford</h4>
-                                            </a>
-                                            <p class="card-description">
-                                                Immaculate tailoring is TOM FORD's forte.
-                                            </p>
-                                            <div class="card-footer">
-                                                <div class="price-container">
-                                                    <span class="price"> &euro; 879</span>
-                                                </div>
-                                                <button class="btn btn-neutral btn-icon btn-round pull-right" rel="tooltip" title="Add to wishlist" data-placement="left">
-                                                    <i class="now-ui-icons ui-2_favourite-28"></i>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- end card -->
+                                <div class="card-body">
+                                <a href="#">
+                                  <h4 class="card-title"><%= item.title %></h4>
+                                </a>
+                                <p class="card-description">
+                                  <%= item.description %>
+                                </p>
+                                <div class="card-footer">
+                                  <div class="price-container">
+                                    <span class="price"> &euro; <%= item.price %></span>
+                                  </div>
+                                  <button class="btn btn-danger btn-neutral btn-icon btn-round pull-right" rel="tooltip" title="Remove from wishlist" data-placement="left">                                 
+                                    <i class="fas fa-heart"></i>
+                                  </button>
+                                  <center>
+                                  <div class="container">
+                                  <%= link_to "Voir le produit", item_path(item), class:"btn btn-primary" %>
+                                  </div>
+                                  </center>
                                 </div>
-                                <div class="col-lg-4 col-md-6">
-                                    <div class="card card-product card-plain">
-                                        <div class="card-image">
-                                            <a href="#">
-                                                <img src="../assets/img/wooyoungmi.jpg" alt="..." />
-                                            </a>
-                                        </div>
-                                        <div class="card-body">
-                                            <a href="#">
-                                                <h4 class="card-title">Wooyoungmi</h4>
-                                            </a>
-                                            <p class="card-description">
-                                                Dark-grey slub wool, pintucked notch lapels.
-                                            </p>
-                                            <div class="card-footer">
-                                                <div class="price-container">
-                                                    <span class="price">&euro; 555</span>
-                                                </div>
-                                                <button class="btn btn-neutral btn-icon btn-round pull-right" rel="tooltip" title="Add to wishlist" data-placement="left">
-                                                    <i class="now-ui-icons ui-2_favourite-28"></i>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- end card -->
-                                </div>
-                                <div class="col-lg-4 col-md-6">
-                                    <div class="card card-product card-plain">
-                                        <div class="card-image">
-                                            <a href="#">
-                                                <img src="../assets/img/sweeney.jpg" alt="..." />
-                                            </a>
-                                        </div>
-                                        <div class="card-body">
-                                            <a href="#">
-                                                <h4 class="card-title">Thom Sweeney</h4>
-                                            </a>
-                                            <p class="card-description">
-                                                It's made from lightweight grey wool woven.
-                                            </p>
-                                            <div class="card-footer">
-                                                <div class="price-container">
-                                                    <span class="price"> &euro; 680</span>
-                                                </div>
-                                                <button class="btn btn-neutral btn-icon btn-round pull-right" rel="tooltip" title="Add to wishlist" data-placement="left">
-                                                    <i class="now-ui-icons ui-2_favourite-28"></i>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- end card -->
-                                </div>
-                                <div class="col-lg-4 col-md-6">
-                                    <div class="card card-product card-plain">
-                                        <div class="card-image">
-                                            <a href="#">
-                                                <img src="../assets/img/kingsman.jpg" alt="..." />
-                                            </a>
-                                        </div>
-                                        <div class="card-body">
-                                            <a href="#">
-                                                <h4 class="card-title">Kingsman</h4>
-                                            </a>
-                                            <p class="card-description">
-                                                Crafted from khaki cotton and fully canvassed.
-                                            </p>
-                                            <div class="card-footer">
-                                                <div class="price-container">
-                                                    <span class="price"> &euro; 725</span>
-                                                </div>
-                                                <button class="btn btn-neutral btn-icon btn-round pull-right" rel="tooltip" title="Remove from wishlist" data-placement="left">
-                                                    <i class="now-ui-icons ui-2_favourite-28"></i>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- end card -->
-                                </div>
-                                <div class="col-lg-4 col-md-6">
-                                    <div class="card card-product card-plain">
-                                        <div class="card-image">
-                                            <a href="#">
-                                                <img src="../assets/img/boglioli.jpg" alt="..." />
-                                            </a>
-                                        </div>
-                                        <div class="card-body">
-                                            <a href="#">
-                                                <h4 class="card-title">Boglioli</h4>
-                                            </a>
-                                            <p class="card-description">
-                                                Masterfully crafted in Northern Italy.
-                                            </p>
-                                            <div class="card-footer">
-                                                <div class="price-container">
-                                                    <span class="price">&euro; 699</span>
-                                                </div>
-                                                <button class="btn btn-neutral btn-icon btn-round pull-right" rel="tooltip" title="Add to wishlist" data-placement="left">
-                                                    <i class="now-ui-icons ui-2_favourite-28"></i>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- end card -->
-                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <%end%> 
+                               
                             </div>
                         </div>
                     </div>
