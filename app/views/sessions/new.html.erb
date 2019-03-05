@@ -3,9 +3,6 @@
   <div class="content">
     <div class="container">
       <h1>Se connecter</h1>
-      <%= form_tag(sessions_path, method: "post") do %>
-      <div class="form-row">
-        <div class="form-group col-md-6">
           <label>Votre adresse mail</label>
           <%= text_field_tag :email, '', class: 'form-control input-small', placeholder: 'Saisissez votre adresse mail...' %>
         </div>

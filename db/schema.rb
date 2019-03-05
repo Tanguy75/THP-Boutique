@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_05_131607) do
+ActiveRecord::Schema.define(version: 2019_03_05_153004) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,14 +40,25 @@ ActiveRecord::Schema.define(version: 2019_03_05_131607) do
     t.index ["item_id"], name: "index_join_cart_items_on_item_id"
   end
 
-  create_table "orders", force: :cascade do |t|
+  create_table "order_items", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "cart_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["cart_id"], name: "index_orders_on_cart_id"
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
+    t.string "first_name"
+    t.string "last_name"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -57,4 +68,6 @@ ActiveRecord::Schema.define(version: 2019_03_05_131607) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "orders", "carts"
+  add_foreign_key "orders", "users"
 end
