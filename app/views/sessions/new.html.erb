@@ -3,7 +3,7 @@
   <div class="content">
     <div class="container">
       <h1>Se connecter</h1>
-      <%= form_tag(sessions_path, method: "post") do %>
+      <%= form_tag(session_path, method: "post") do %>
         <div class="form-group">
           <label>Votre adresse mail</label>
           <%= text_field_tag :email, '', class: 'form-control', placeholder: 'Saisissez votre adresse mail...' %>
