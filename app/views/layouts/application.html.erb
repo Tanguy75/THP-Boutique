@@ -5,41 +5,102 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <meta name="turbolinks-visit-control" content="reload">
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <!--     Fonts and icons     -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <!--     CSS files     -->
-    <link href="./assets/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="./assets/css/now-ui-kit.css?v=1.2.0" rel="stylesheet" />
+    <link href="./assets/css/bootstrap.min.scss" rel="stylesheet" />
+    <link href="./assets/css/now-ui-kit.scss?v=1.2.0" rel="stylesheet" />
+
 
   </head>
 
-  <body>
+  <body class="ecommerce-page">
+      <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-white fixed-top navbar-transparent" color-on-scroll="500">
+        <div class="container">
+            <div class="navbar-translate">
+                <a class="navbar-brand" href="/" rel="tooltip" title="Designed by Invision. Coded by Creative Tim" data-placement="bottom">
+                    E-Kitten
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-bar bar1"></span>
+                    <span class="navbar-toggler-bar bar2"></span>
+                    <span class="navbar-toggler-bar bar3"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" data-nav-image="../assets/img/blurred-image-1.jpg" data-color="orange">
+                <ul class="navbar-nav ml-auto">
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenu" href="" data-toggle="dropdown">
+                      <i class="fas fa-user-alt"></i>
+                      <p>Profil</p>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                      <a class="dropdown-item" href="/users/new">
+                        <i class="now-ui-icons business_chart-pie-36"></i>
+                        Créer un compte
+                      </a>
+                      <a class="dropdown-item" href="/sessions/new">
+                        <i class="now-ui-icons files_single-copy-04"></i>
+                        Se Connecter
+                      </a>
+                    </div>
+                  </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown">
+                            <i class="fas fa-cat" aria-hidden="true"></i>
+                            <p>Chatons</p>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="#">
+                                <i class="now-ui-icons shopping_box"></i> Mignon
+                            </a>
+                            <a class="dropdown-item" href="#">
+                                <i class="now-ui-icons ui-2_settings-90"></i> Gros
+                            </a>
+                            <a class="dropdown-item" href="#">
+                                <i class="now-ui-icons text_align-left"></i> Petit
+                            </a>
+                            <a class="dropdown-item" href="#">
+                                <i class="now-ui-icons sport_user-run"></i> LolCat
+                            </a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown">
+                            <i class="fas fa-cogs" aria-hidden="true"></i>
+                            <p>Emplacement libre</p>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="../examples/about-us.html">
+                                <i class="now-ui-icons business_bulb-63"></i> About-us
+                            </a>
+                            <a class="dropdown-item" href="../examples/blog-post.html">
+                                <i class="now-ui-icons text_align-left"></i> Blog Post
+                            </a>
+                            <a class="dropdown-item" href="../examples/blog-posts.html">
+                                <i class="now-ui-icons design_bullet-list-67"></i> Blog Posts
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- End Navbar -->
+
+    
+
     <%= yield %>
 
     <!--   Core JS Files   -->
-<script src="./assets/js/core/jquery.3.2.1.min.js" type="text/javascript"></script>
-<script src="./assets/js/core/popper.min.js" type="text/javascript"></script>
-<script src="./assets/js/core/bootstrap.min.js" type="text/javascript"></script>
-<script src="./assets/js/plugins/moment.min.js"></script>
-<!--  Plugin for Switches, full documentation here: http://www.jque.re/plugins/version3/bootstrap.switch/ -->
-<script src="./assets/js/plugins/bootstrap-switch.js"></script>
-<!--	Plugin for Tags, full documentation here: https://github.com/bootstrap-tagsinput/bootstrap-tagsinputs  -->
-<script src="./assets/js/plugins/bootstrap-tagsinput.js"></script>
-<!--	Plugin for Select, full documentation here: http://silviomoreto.github.io/bootstrap-select -->
-<script src="./assets/js/plugins/bootstrap-selectpicker.js" type="text/javascript"></script>
-<!--  Google Maps Plugin    -->
-<!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script> -->
-<!--	Plugin for Fileupload, full documentation here: http://www.jasny.net/bootstrap/javascript/#fileinput -->
-<script src="./assets/js/plugins/jasny-bootstrap.min.js"></script>
-<!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
-<script src="./assets/js/plugins/nouislider.min.js" type="text/javascript"></script>
-<!--  Plugin for the DatePicker, full documentation here: https://github.com/uxsolutions/bootstrap-datepicker -->
-<script src="./assets/js/plugins/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
-<!-- Control Center for Now Ui Kit: parallax effects, scripts for the example pages etc -->
-<script src="./assets/js/now-ui-kit.js?v=1.2.0" type="text/javascript"></script>
+
 <script type="text/javascript">
     $(document).ready(function() {
         // the body of this function is in assets/js/now-ui-kit.js
@@ -48,4 +109,41 @@
 </script>
 
   </body>
+
+  <footer class="footer ">
+            <div class="container">
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="#creative">
+                                Locust Devs
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#creative">
+                                About Us
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#creative">
+                                Blog
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#creative">
+                                License
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="copyright">
+                    &copy;
+                    <script>
+                        document.write(new Date().getFullYear())
+                    </script>, Designed by
+                    <a href="#">Locust</a>. Coded by
+                    <a href="#">Steph, Tanguy, Jack, Djémil et Paul</a>.
+                </div>
+            </div>
+        </footer>
 </html>
