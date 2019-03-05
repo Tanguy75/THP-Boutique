@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 	resources :items do
 		resources :join_cart_items
 	end 
-	
+	resources :join_cart_items
 	#resources :sessions, only: [:new, :create, :destroy]
 	resources :carts
 

@@ -74,6 +74,7 @@
                             </div>
                         </div>
                         <div class="row justify-content-end">
+                            <%= button_to  "Ajouter au panier", join_cart_items_path(:item_id => @item_id), method: :post , class: "btn btn-primary mr-3"%>
                         </div>
                     </div>
                 </div>
