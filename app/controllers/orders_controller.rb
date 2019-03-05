@@ -1,19 +1,26 @@
 class OrdersController < ApplicationController
+  
+   def new
+    
+   end
+   
+   def show
+    
+   end
 
-  def create
-    @order = Cart.find(params[:cart_id])
-    @user = current_user
+   def edit
+    @order= Order.find(params[:id])
+   end
+   
+   def create # a revoir avec l'équipe
+    @order = Order.create(user: user_current, items: Item.find(params[:id]))
 
-    o = Order.create(user_id: @user.id, cart_id: @order)
 
-    if o.save
-      flash[:success] = "Le panier a été validé"
-           redirect_to #_path(e)
- 
-     elsif 
-      flash[:danger] = "Une erreur est survenue"
-       redirect_to root_path
-     end
-  end 
+   end
 
+   def update
+   end
+
+   def delete
+   end
 end
