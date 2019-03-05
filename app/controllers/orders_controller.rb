@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-
+  
    def new
     
    end
@@ -23,6 +23,4 @@ class OrdersController < ApplicationController
 
    def delete
    end
-
-  
 end
