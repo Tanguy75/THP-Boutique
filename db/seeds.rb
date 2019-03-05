@@ -10,6 +10,6 @@ require "faker"
 Item.destroy_all
 
 20.times do
-	Item.create(title: Faker::Cat.name, description: Faker::Cat.breed, price: Faker::Number.decimal(2))
+	Item.create!(title: Faker::Cat.name, description: Faker::Cat.breed, price: Faker::Number.decimal(2))
 end
 
