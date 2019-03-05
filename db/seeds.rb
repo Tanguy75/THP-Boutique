@@ -5,14 +5,20 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require "faker"
 
-require 'faker'
+puts 'Starting to seed..'
 
-Item.destroy_all
+20.times do
+	password = Faker::Internet.password(8)
+	User.create(email: Faker::Internet.free_email, password: password, password_confirmation: password)
+end
+puts '20 users created'
 
-20.times do  
+20.times do
+	Item.create(title: Faker::Food.dish, description: Faker::Food.description, price: Faker::Number.decimal(2))
+end
+puts '20 Items created'
+ 
 
-  item = Item.create!(title: Faker::Cat.name, description: Faker::Cat.breed, price: Faker::Number.decimal(2))
-end 
-
-
+puts 'Seeding over, enjoy your new database'
