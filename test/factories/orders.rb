@@ -1,5 +1,9 @@
 FactoryBot.define do
   factory :order do
-    user { "" }
+    delivery_address { "MyString" }
+    delivery_type { "MyString" }
+    payment_type { "MyString" }
+    user { nil }
+    cart { nil }
   end
 end
