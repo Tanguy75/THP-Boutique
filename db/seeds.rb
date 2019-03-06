@@ -7,9 +7,17 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require "faker"
 
-Item.destroy_all
+#Item.destroy_all
+User.destroy_all
+
+puts 'Start seeding...'
 
 20.times do
-	Item.create!(title: Faker::Cat.name, description: Faker::Cat.breed, price: Faker::Number.decimal(2))
+Item.create!(title: Faker::Cat.name, description: Faker::Cat.breed, price: Faker::Number.decimal(2))
 end
+puts '20 items created'
 
+5.times do
+	User.create!(email: Faker::Internet.email,	password: '#$taawktljasktlw4aaglj', first_name: Faker::Movies::Hobbit.character, last_name: Faker::TvShows::RickAndMorty.character)
+end
+puts '10 users created'

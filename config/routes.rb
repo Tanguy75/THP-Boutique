@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
 
-	root 'items#index'
+  devise_for :users
+  root 'items#index'
+
+	resources :charges, only: [:new, :create]
 	
-	devise_for :users
 	resources :users
 
 	resources :items do
@@ -11,6 +13,6 @@ Rails.application.routes.draw do
 	resources :join_cart_items
 	#resources :sessions, only: [:new, :create, :destroy]
 	resources :carts
-
+	resources :orders
 
 end
