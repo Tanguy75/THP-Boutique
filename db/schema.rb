@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2019_03_05_153004) do
   create_table "items", force: :cascade do |t|
     t.string "title"
     t.text "description"
-    t.decimal "price"
+    t.float "price"
     t.string "image_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -41,11 +41,18 @@ ActiveRecord::Schema.define(version: 2019_03_05_153004) do
   end
 
   create_table "order_items", force: :cascade do |t|
+    t.integer "product_id"
+    t.integer "order_id"
+    t.float "unit_price"
+    t.integer "quantity"
+    t.float "total_price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "orders", force: :cascade do |t|
+    t.float "subtotal"
+    t.float "total"
     t.bigint "user_id"
     t.bigint "cart_id"
     t.datetime "created_at", null: false
