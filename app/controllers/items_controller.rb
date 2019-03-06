@@ -8,4 +8,9 @@ class ItemsController < ApplicationController
     @items = Item.all
   end 
 
+  def destroy
+    @cart_item = @current_cart.item(:item_id)
+    @item = Item.find(params[:id])
+    @cart_item.destroy
+  end 
 end

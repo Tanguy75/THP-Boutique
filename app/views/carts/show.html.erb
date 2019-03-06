@@ -34,7 +34,7 @@
 													<span><%= item.price %>€</span>
 											</div>
 											<div class="row justify-content-end">
-				<%= link_to "Supprimer l'article", orders_path, method: :post, class:"btn btn-secondary" %>
+				<%= link_to "Supprimer l'article", item_path, method: :delete,  data: { confirm: "Tu es sûr(e) ?" }, class:"btn btn-secondary" %>
 			</div>
 									</div>
 								</div>
