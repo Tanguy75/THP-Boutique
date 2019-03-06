@@ -11,6 +11,6 @@ Rails.application.routes.draw do
 	resources :join_cart_items
 	#resources :sessions, only: [:new, :create, :destroy]
 	resources :carts
-
+	resources :orders
 
 end

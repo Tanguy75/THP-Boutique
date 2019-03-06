@@ -1,6 +1,7 @@
 class CartsController < ApplicationController
   def show
-		@cart = @current_cart
+    @cart = @current_cart
+    @items = @cart.items
 	end
 
 	def destroy
