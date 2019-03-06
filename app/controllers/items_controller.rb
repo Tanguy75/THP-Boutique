@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
+    
   end
 
   def index
@@ -9,7 +10,7 @@ class ItemsController < ApplicationController
   end 
 
   def destroy
-    @cart_item = @current_cart.item(:item_id)
+    @cart_item = @current_cart.items(:item_id)
     @item = Item.find(params[:id])
     @cart_item.destroy
   end 

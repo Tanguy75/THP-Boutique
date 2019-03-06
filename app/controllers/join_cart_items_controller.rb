@@ -13,8 +13,9 @@ class JoinCartItemsController < ApplicationController
       end
     
       @join_cart_item.save
-      redirect_to root_path
       flash[:success] = "L'article a bien été ajouté au panier"
+      redirect_to root_path
+      
     end
   
     def destroy
