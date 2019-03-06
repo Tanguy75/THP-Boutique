@@ -14,7 +14,11 @@
 ActiveRecord::Schema.define(version: 2019_03_06_115445) do
 =======
 ActiveRecord::Schema.define(version: 2019_03_06_131102) do
+<<<<<<< HEAD
 >>>>>>> 63a918f55bce75d04bbaf88e1085dc3fa82ac6c2
+=======
+>>>>>>> 40109c7789a2c5f42d672f3322e793f781f99396
+>>>>>>> developpement
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
