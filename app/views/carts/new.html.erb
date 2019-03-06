@@ -1,0 +1,41 @@
+<h1> Coucou c'est le cart ! </h1>
+
+<div class="blogs-3">
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-10 ml-auto mr-auto">
+                            <h2 class="title">Votre panier</h2>
+                            <br>
+														<%@cart.items.each do |item|%>
+                            <div class="card card-plain card-blog">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="card-image">
+                                            <img class="img img-raised rounded" src="assets/img/examples/card-blog10.jpg">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <h3 class="card-title">
+                                            <a href="#pablo"> <%= @cart.items %>/a>
+                                        </h3>
+                                        <p class="card-description">
+                                            Finding temporary housing for your dog should be as easy as renting an Airbnb. That’s the idea behind Rover, which raised $65 million to expand its pet sitting and dog-walking businesses..
+                                            <a href="#pablo"> Read More </a>
+                                        </p>
+                                        <div class="author">
+                                            <img src="assets/img/olivia.jpg" alt="..." class="avatar img-raised">
+                                            <span>Katie Roof</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+						
+						<% end %>
+                
+             
+            

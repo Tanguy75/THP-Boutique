@@ -1,10 +1,60 @@
-<div class="page-header section-image">
-	<div class="page-header-image" style="background-image:url(https://i.pinimg.com/originals/f5/1f/2c/f51f2c02263b44779b99662c0da628be.jpg)"></div>
-    <div class="content">
-      <div class="container">
-				<h1> Votre panier </h1>
+<h1> Coucou c'est le cart ! </h1>
 
+<div class="blogs-3">
+<div class="container">
+    <div class="row">
+      <div class="col-md-10 ml-auto mr-auto">
+<h2 class="title">Votre panier</h2>
+</div>
+</div>
+</div>
+<%@items.each do |item|%>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 ml-auto mr-auto">
+        
+          <br>
+						
+							<div class="card card-plain card-blog">
+								<div class="row">
+									<div class="col-md-4">
+										<div class="card-image">
+											<img class="img img-raised rounded" src="https://images.pexels.com/photos/171227/pexels-photo-171227.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260">
+										</div>
+									</div>
+									<div class="col-md-8">
+										<h3 class="card-title">
+											<a href="#pablo"> <%= item.title %></a>
+										</h3>
+											<p class="card-description">
+											<%= item.description %>
+											</p>
+											<div class="author">
+													<p><%= item.price %>€</p>
+											</div>
+																<div class="row justify-content-end">
+				
+			</div>
+											<div class="row justify-content-end">
+				<%= link_to "Supprimer l'article", item_path, method: :delete,  data: { confirm: "Tu es sûr(e) ?" }, class:"btn btn-secondary" %>
+			</div>
+									</div>
+								</div>
+							</div>
 			</div>
 		</div>
 	</div>
 </div>
+<% end %>
+<div class="container">
+    <div class="row">
+      <div class="col-md-10 ml-auto mr-auto">
+			<div class="row justify-content-end">
+			<p>Total €</p>
+			</div>
+<div class="row justify-content-end">
+				<%= link_to "Passer commande", orders_path, method: :post, class:"btn btn-primary" %>
+			</div> 
+			</div>
+			</div>
+			</div>  

@@ -6,12 +6,11 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.all
-    @order_item = current_order.order_items.new
   end 
 
-  private
-  	def product_params
-  		params.require(:items).permit(:title, :price)
-  	end
-
+  def destroy
+    @cart_item = @current_cart.item(:item_id)
+    @item = Item.find(params[:id])
+    @cart_item.destroy
+  end 
 end
