@@ -36,21 +36,37 @@
             </div>
             <div class="collapse navbar-collapse" data-nav-image="../assets/img/blurred-image-1.jpg" data-color="orange">
                 <ul class="navbar-nav ml-auto">
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenu" href="" data-toggle="dropdown">
-                      <i class="fas fa-user-alt"></i>
-                      <p>Profil</p>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                      <a class="dropdown-item" href="/users/new">
-                        <i class="now-ui-icons business_chart-pie-36"></i>
-                        Créer un compte
-                      </a>
-                      <a class="dropdown-item" href="/sessions/new">
-                        <i class="now-ui-icons files_single-copy-04"></i>
-                        Se Connecter
-                      </a>
-                    </div>
+              <div class="collapse navbar-collapse" data-nav-image="../assets/img/blurred-image-1.jpg" data-color="orange">
+        
+          <div class="navbar-nav flex-row ml-md-auto d-none d-md-flex">    
+            <% if user_signed_in? %>
+              <div class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <% if current_user.first_name != nil %>
+                  <%= current_user.first_name %>
+                <% else %>
+                  Mon compte
+                <% end %>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                	<%= link_to "Mon Panier", cart_path(current_cart), :class => "dropdown-item" %>
+									<%= link_to "Mon Profil", user_path(current_user), :class => "dropdown-item" %>
+                	<%= link_to "Éditer mon profil", edit_user_registration_path, :class => "dropdown-item" %>
+                  <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete,  data: { confirm: "Tu es sûr(e) ?" }, :class => "dropdown-item" %>
+                </div>
+							</div>
+									<% else %>
+										<div class="nav-item dropdown">
+											<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+												Connexion
+											</a>
+											<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+												<%= link_to "Se Connecter", new_user_session_path, :class => "dropdown-item" %>
+												<%= link_to "S'inscrire", new_user_registration_path, :class => "dropdown-item" %>
+											</div>
+										</div>
+									<% end %>
+								</div>
                   </li>
                     <li class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown">
