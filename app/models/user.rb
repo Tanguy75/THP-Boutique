@@ -7,7 +7,8 @@ class User < ApplicationRecord
   after_create :welcome_send  
     
 
-  has_one :cart 
+  has_one :cart
+  has_many :orders 
 
   private
 

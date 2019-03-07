@@ -20,7 +20,20 @@
         </div>
         <div class="section">
           <div class="container">
-          	  <h2 class="title">Mon historique des commandes</h2>      
+          	  <h2 class="title">Mon historique des commandes</h2>   
+                <div class="card-columns border-info container">
+                  <% @orders.each do |command| %>
+                    <div class="card">
+                      <div class="card-header pb-1 d-flex">
+                        <div class="container">
+                          <h3 class="card-title">Commande n° <%= command.id %></h3>
+                        </div>
+                      </div>
+                  <% end %>
+
+
+
+                </div>   
           </div>
         </div>
     </div>
