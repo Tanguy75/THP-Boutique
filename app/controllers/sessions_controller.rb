@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
 	# corespond à la page de login
-=begin
+
 	def new
 	end
 
@@ -27,4 +27,3 @@ class SessionsController < ApplicationController
 		redirect_to home_path
 	end
 end
-=end
