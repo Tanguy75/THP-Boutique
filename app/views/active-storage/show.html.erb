@@ -1,6 +1,6 @@
 <%= form.file_field :profile_picture %>
 <h3>Changer d'avatar ?</h3>
 <%= form_tag user_avatars_path(@user), multipart: true do %>
-  <%= file_field_tag :avatar %>
+  <%= file_field_tag :profile_picture %>
   <%= submit_tag "mettre à jour" %>
 <% end %>
