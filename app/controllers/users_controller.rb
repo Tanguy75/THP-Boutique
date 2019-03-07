@@ -2,10 +2,11 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update]
   before_action :good_user?, only: [:show, :edit, :update]
 
-  # GET /users/1
-  def show
-    @user = User.find(params[:id])
-  end
+	def show
+		@user = User.find(params[:id])
+		@orders = @user.orders
+	end
+
 
   # GET /users/1/edit
   def edit

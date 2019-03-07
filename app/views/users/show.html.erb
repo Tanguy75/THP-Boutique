@@ -20,7 +20,42 @@
         </div>
         <div class="section">
           <div class="container">
-          	  <h2 class="title">Mon historique des commandes</h2>      
+          	  <h2 class="title">Mon historique des commandes</h2>   
+                <div class="col">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class="">
+                                <tr>
+                                    <th class="text-center">N°</th>
+                                    <th>Date de commande</th>
+                                    <th>Articles</th>
+                                    <th class="text-center">Prix</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% if @orders != nil %>
+                                    <% @orders.each do |order| %>
+                                    <tr>
+                                        <td class="text-center"><%= order.id %></td>
+                                        <td><%= order.created_at %></td>
+                                        <td>
+                                            <% order.order_items.each do |order_item| %>
+                                                <%= order_item.item.title %><br>
+                                            <% end %>
+                                        </td>
+                                      
+                                        <td class="text-center">
+                                            <% order.order_items.each do |order_item| %>
+                                                <%= order_item.item.price %>€<br>
+                                            <% end %>
+                                        </td> 
+                                    </tr>
+                                    <% end %> 
+                                <% end %>
+                            </tbody>
+                            </table>
+                    </div>
+                </div>  
           </div>
         </div>
     </div>
