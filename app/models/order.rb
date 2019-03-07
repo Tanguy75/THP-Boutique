@@ -1,5 +1,5 @@
 class Order < ApplicationRecord
-  after_create :orderconfirm_send
+  # after_create :orderconfirm_send
   
   
   has_many :cart
@@ -10,11 +10,11 @@ class Order < ApplicationRecord
   has_many :items, through: :order_item
   
   private
-
+=begin
   def orderconfirm_send
     OrderMailer.orderconfirm_email(self).deliver_now
     OrderMailer.orderadmin_email(self).deliver_now
   end
-
+=end 
 
 end
