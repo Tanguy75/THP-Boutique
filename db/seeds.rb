@@ -20,4 +20,4 @@ puts '20 items created'
 5.times do
 	User.create!(email: Faker::Internet.email,	password: '#$taawktljasktlw4aaglj', first_name: Faker::Hobbit.character, last_name: Faker::RickAndMorty.character)
 end
-puts '10 users created'
+puts '5 users created'
