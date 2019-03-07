@@ -30,9 +30,11 @@
 											<%= item.description %>
 											</p>
 											<div class="author">
-													<img src="assets/img/olivia.jpg" alt="..." class="avatar img-raised">
-													<span><%= item.price %>€</span>
+													<p><%= item.price %>€</p>
 											</div>
+																<div class="row justify-content-end">
+				
+			</div>
 											<div class="row justify-content-end">
 				<%= link_to "Supprimer l'article", item_path, method: :delete,  data: { confirm: "Tu es sûr(e) ?" }, class:"btn btn-secondary" %>
 			</div>
@@ -47,6 +49,9 @@
 <div class="container">
     <div class="row">
       <div class="col-md-10 ml-auto mr-auto">
+			<div class="row justify-content-end">
+			<p>Total <%= @amount %> €</p>
+			</div>
 <div class="row justify-content-end">
 				<%= link_to "Passer commande", orders_path, method: :post, class:"btn btn-primary" %>
 			</div> 
