@@ -53,7 +53,26 @@
 			<p>Total <%= @amount %> €</p>
 			</div>
 <div class="row justify-content-end">
-				<%= link_to "Passer commande", orders_path, method: :post, class:"btn btn-primary" %>
+			<!--	<%= link_to "Passer commande", new_charge_path, method: :get, class:"btn btn-primary" %> -->
+				 <% if @amount > 0 %>
+								<%= form_tag charges_path do %> 
+									<input type="text" name="cart_amount" value="<%= (@amount * 100).round %>" hidden>   
+
+									<script  
+										src="https://checkout.stripe.com/checkout.js" class="stripe-button" 
+										data-key="<%= ENV['PUBLISHABLE_KEY'] %>"
+										data-label="Passer la commande"    
+										data-amount="<%= @amount * 100 %>"   
+										data-name="E-Kitten"   
+										data-description="Votre commande"   
+										data-image="https://stripe.com/img/documentation/checkout/marketplace.png"  
+										data-locale="auto"  
+										data-currency="eur">    
+									</script> 
+
+
+									<% end %>
+<% end %>
 			</div> 
 			</div>
 			</div>

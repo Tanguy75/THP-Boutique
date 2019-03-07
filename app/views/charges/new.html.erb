@@ -1,18 +1,27 @@
-<%= form_tag charges_path do %>
-  <article>
-    <% if flash[:error].present? %>
-      <div id="error_explanation">
-        <p><%= flash[:error] %></p>
-      </div>
-    <% end %>
-    <label class="amount">
-      <span>en attattente du prix</span>
-    </label>
-  </article>
+<div class="container">
+    <div class="row">
+      <div class="col-md-10 ml-auto mr-auto">
+			<div class="row justify-content-end">
+			<p>Total <%= @amount %> €</p>
+			</div>
+<div class="row justify-content-end">
+				<%= link_to "Passer commande", new_charge_path, method: :get, class:"btn btn-primary" %>
+				 <% if @amount > 0 %>
+								<%= form_tag charges_path do %> 
+									<input type="text" name="cart_amount" value="<%= (@amount * 100).round %>" hidden>   
 
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-description="payement confirmer"
-          data-amount="@amount"
-          data-locale="auto"></script>
+									<script  
+										src="https://checkout.stripe.com/checkout.js" class="stripe-button" 
+										data-key="<%= ENV['PUBLISHABLE_KEY'] %>"    
+										data-amount="<%= @amount * 100 %>"   
+										data-name="Demo Site"   
+										data-description="Example charge"   
+										data-image="https://stripe.com/img/documentation/checkout/marketplace.png"  
+										data-locale="auto"  
+										data-currency="eur">    
+									</script> 
+
+
+									<% end %>
 <% end %>
+			</div> 
