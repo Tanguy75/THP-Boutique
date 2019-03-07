@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
 	# corespond à la page de login
-=begin
+
 	def new
 	end
 
@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
 	  # cherche s'il existe un utilisateur en base avec l’e-mail
 	  @user = User.find_by(email: params[:email])
 
-	  # on vérifie si l'utilisateur existe bien ET si on arrive à l'authentifier (méthode bcrypt) avec le mot de passe 
+	  # on vérifie si l'utilisateur existe bien ET si on arrive à l'authentifier (méthode bcrypt) avec le mot de passe
 	  if @user && @user.authenticate(params[:encrypted_password])
 	    session[:user_id] = @user.id
 	    remember @user
@@ -21,10 +21,10 @@ class SessionsController < ApplicationController
 	  end
 	end
 
-	# logout 
+	# logout
 	def destroy
 		session.delete(:user_id)
 		redirect_to home_path
 	end
+
 end
-=end
