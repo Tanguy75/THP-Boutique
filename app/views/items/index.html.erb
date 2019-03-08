@@ -167,7 +167,7 @@
 
                           <%@items.each do |item|%>
                           <div class="col-lg-4 col-md-6">
-                            <div class="card card-product card-plain">
+                            <div class="card card-product">
                               <div class="card-image">
                                 <a href="#">
                                   <img src="https://images.pexels.com/photos/416160/pexels-photo-416160.jpeg?auto=compress&cs=tinysrgb&h=120&w=250" alt="chaton" />
@@ -177,7 +177,7 @@
                                 <a href="#">
                                   <h4 class="card-title"><%= item.title %></h4>
                                 </a>
-                                <p class="card-description">
+                                <p class="card-subtitle mb-2 text-center">
                                   <%= item.description %>
                                 </p>
                                 <div class="card-footer">
@@ -189,9 +189,9 @@
                                   </button>
                                   <center>
                                   <div class="container">
-                                  <%= link_to "Voir le produit", item_path(item), class:"btn btn-primary boutton " %>
+                                  <%= link_to "Voir le produit", item_path(item), class:"btn btn-secondary btn-sm " %>
                                   </br></br>
-                                  <%= button_to  "Ajouter au panier", join_cart_items_path(:item_id => @item_id), method: :post , class: "btn btn-secondary mr-3"%> 
+                                  <%= button_to  "Ajouter au panier", join_cart_items_path(:item_id => @item_id), method: :post , class:"btn btn-primary btn-sm" %> 
                                   </div>
                                   </center>
                                 </div>
