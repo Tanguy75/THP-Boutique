@@ -28,19 +28,20 @@
 ## On veut de l'aide ! <a name="help"></a> :
 
 Si jamais tu peux nous aider sur les problèmes suivants on est preneur :
-- pourquoi le bouton "ajouter au panier" de l'index ne fonctionne pas ? C'est la même méthode dans l'index et le show de l'item mais dans l'index il n'arrive pas à récupérer l'id de l'item sélectionné et on ne comprends pas comment régler ça
-- comment supprimer un article du panier ? Le bouton ne semble pas capable de trouver l'item à supprimer, le chemin du bouton semble être le problème, qu'est ce qu'il manque ?
-- l'active storage foutait le bordel. Impossible de se connecter ou de s'inscrire sur la branche active storage, il n'arrivait plus à trouver l'id de l'user une fois active storage mis en place. Impossible de trouver la raison.
-- heroku bloque à l'inscription, ça marche en local mais pas en prod mystère, il semblerait que le problème proviennent des migrations, j'ai voulu tenter un cycle heroku run rails (ou rake) db:drop/create/migrate/seed mais je n'ai pas les droits d'écriture sur le repo et la personne qui les a n'est pas disponible à cette heure-ci
-- impossible d'afficher le total de la commande dans la page profil de l'user. On a tout tenté on ne sait pas comment l'appeler... Help !
+- Pourquoi le bouton "ajouter au panier" de l'index ne fonctionne pas ? C'est la même méthode dans l'index et le show de l'item mais dans l'index il n'arrive pas à récupérer l'id de l'item sélectionné et on ne comprends pas comment régler ça.
+- Comment supprimer un article du panier ? Le bouton ne semble pas capable de trouver l'item à supprimer, le chemin du bouton semble être le problème, qu'est ce qu'il manque ?
+- L'active storage foutait le bordel. Impossible de se connecter ou de s'inscrire sur la branche active storage, il n'arrivait plus à trouver l'id de l'user une fois active storage mis en place. Impossible de trouver la raison.
+- Heroku bloque à l'inscription, ça marche en local mais pas en prod mystère, il semblerait que le problème proviennent des migrations, j'ai voulu tenter un cycle heroku run rails (ou rake) db:drop/create/migrate/seed mais je n'ai pas les droits d'écriture sur le repo et la personne qui les a n'est pas disponible à cette heure-ci.
+- Impossible d'afficher le total de la commande dans la page profil de l'user. On a tout tenté on ne sait pas comment l'appeler... Help !
+- Les flashs ne fonctionnent pas. Un truc a visiblement été oublié dans la bataille, lequel ?
 
 ## La marche à suivre <a name="tuto"></a> :
 
-- l'appli héroku n'étant pas fonctionnelle pour le moment, il va falloir passer passer par un git clone, un bundle install, un rails db:create/migrate/seed et enfin un rails server pour le tester en local (encore une fois le problème sera peut-être résolu demain matin mais rien n'est sûr)
-- pour se connecter/s'inscrire/consulter ou éditer son profil, tout se passe dans l'onglet connexion qui portera votre nom une fois inscrit/connecté
-- pour ajouter un article dans le panier passez par le bouton "voir le produit" et une fois dans la page show de l'item par le bouton "ajouter au panier"
-- pour consulter son panier et payer, rendez vous dans l'onglet de votre profil, une fois le paiement enregistre la commande apparaît dans le profil et un mail est envoyé à l'user et à un admin 
-- j'espère n'avoir rien oublié, on sait jamais
+- L'appli heroku n'étant pas fonctionnelle pour le moment, il va falloir passer passer par un git clone, un bundle install, un rails db:create/migrate/seed et enfin un rails server pour le tester en local (encore une fois le problème sera peut-être résolu demain matin mais rien n'est sûr). Désolé !
+- Pour se connecter/s'inscrire/consulter ou éditer son profil, tout se passe dans l'onglet connexion qui portera votre nom une fois inscrit/connecté.
+- Pour ajouter un article dans le panier passez par le bouton "voir le produit" et une fois dans la page show de l'item par le bouton "ajouter au panier".
+- Pour consulter son panier et payer, rendez vous dans l'onglet de votre profil, une fois le paiement enregistre la commande apparaît dans le profil et un mail est envoyé à l'user et à un admin.
+- J'espère n'avoir rien oublié, on sait jamais.
 
 ## L'équipe <a name="team"></a> :
 
@@ -49,3 +50,7 @@ Si jamais tu peux nous aider sur les problèmes suivants on est preneur :
 - Djémil / @djémil / Stripe, Front, Devise
 - Steph / @Steph / Devise, Front(Main), Back
 - Paul / @Paul / Devise, Stripe, Front, Back, Debug
+
+**Le lien de l'app heroku(pas à jour et pas fonctionnelle aux dernières nouvelles)**
+
+https://boutique-dev.herokuapp.com/
